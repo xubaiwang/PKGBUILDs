@@ -1,0 +1,28 @@
+# Maintainer: Charles Dong <chardon_cs@proton.me>
+
+pkgname=deno-bin
+pkgver=2.0.2
+pkgrel=1
+pkgdesc="Startup AUR providing the latest deno runtime, then you can upgrade deno using \`deno upgrade\`"
+arch=('aarch64')
+url="https://deno.com"
+license=(MIT)
+provides=(deno)
+conflicts=(deno)
+
+_target=deno-$CARCH-unknown-linux-gnu
+_baseurl=https://github.com/denoland/deno/releases/download/v2.0.2
+source=(
+    $_baseurl/${_target}.zip
+)
+sha256sums=(
+    "bbd4c8be2b45a1277bf4caa48e4c0e7c4f3c305cab0d3548971b9f93e9ce711e"
+)
+
+check() {
+    cd $srcdir
+}
+
+package() {
+    install -Dm755 "$srcdir/deno" "$pkgdir/usr/bin/deno"
+}
