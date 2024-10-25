@@ -11,7 +11,7 @@ conflicts=(pnpm)
 makedepends=(npm)
 noextract=("${_pkgname}-${pkgver}.tgz")
 
-sha256sums=('1778e5b06f5593bce7b8c3ecc99b748b853ec4ebc5fca1ea808d6edcc21403a9'
+sha256sums=('2ef6e547b0b07d841d605240dce4d635677831148cd30f6d564b8f4f928f73d2'
             'aa0810cc8470d7df338df43742a4a0be86f50ea6348eda3f2168bb712072aced')
 source=(
   "${_pkgname}-${pkgver}.tgz"::"https://registry.npmjs.org/${_pkgname}/-/${_pkgname}-${pkgver}.tgz"
