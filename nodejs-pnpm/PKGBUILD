@@ -1,0 +1,27 @@
+pkgname="nodejs-pnpm"
+_pkgname="${pkgname#nodejs-}"
+pkgdesc="Install pnpm package manager with npm"
+url="https://github.com/pnpm/pnpm"
+license=(MIT)
+arch=(any)
+pkgver=9.12.2
+provides=(pnpm)
+conflicts=(pnpm)
+makedepends=(npm)
+noextract=("${_pkgname}-${pkgver}.tgz")
+
+sha256sums=('1778e5b06f5593bce7b8c3ecc99b748b853ec4ebc5fca1ea808d6edcc21403a9'
+            'aa0810cc8470d7df338df43742a4a0be86f50ea6348eda3f2168bb712072aced')
+pkgver=5.4.4
+pkgrel=1
+source=(
+  "${_pkgname}-${pkgver}.tgz"::"https://registry.npmjs.org/${_pkgname}/-/${_pkgname}-${pkgver}.tgz"
+  LICENSE::"https://github.com/pnpm/pnpm/raw/main/LICENSE"
+)
+
+package() {
+  npm i -g --prefix "${pkgdir}/usr" "${srcdir}/${_pkgname}-${pkgver}.tgz"
+  find "$pkgdir" -name package.json -print0 | xargs -r -0 sed -i '/_where/d'
+  install -Dm755 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
+

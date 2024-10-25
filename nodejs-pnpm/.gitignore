@@ -1,0 +1,7 @@
+*.tgz
+LICENSE
+node_modules/
+
+src/
+pkg/
+*.pkg.tar.xz
