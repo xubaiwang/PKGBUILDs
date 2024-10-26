@@ -1,0 +1,35 @@
+pkgname="skland-daily-attendance-git"
+pkgdesc="基於 Node.js 实现的森空岛自动签到"
+url="https://github.com/enpitsuLin/skland-daily-attendance"
+license=(MIT)
+arch=(any)
+pkgrel=1
+depends=(nodejs npm)
+
+source=(
+  "git+https://github.com/enpitsuLin/skland-daily-attendance"
+  "skland-daily-attendance.sh"
+)
+sha256sums=(
+  'SKIP'
+  'fe0d97810faa1b30575e0159b6f9509ebd9c44dfb5bcd24cb10b255b41dc38e7'
+)
+
+pkgver=r40.41d9dd2
+pkgver() {
+  cd "skland-daily-attendance"
+  printf "r%s.%s\n" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+package() {
+  # npm pack
+  pushd "$srcdir/skland-daily-attendance"
+  npm pack
+  popd
+  # npm install
+  npm i -g --prefix "${pkgdir}/usr" "${srcdir}/skland-daily-attendance/skland-daily-attendance-1.0.0.tgz"
+  find "$pkgdir" -name package.json -print0 | xargs -r -0 sed -i '/_where/d'
+  # bash for running npm
+  install -Dm755 skland-daily-attendance.sh "$pkgdir/usr/bin/skland-daily-attendance"
+}
+

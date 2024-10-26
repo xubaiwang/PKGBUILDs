@@ -1,0 +1,5 @@
+skland-daily-attendance/
+
+src/
+pkg/
+*.pkg.tar.xz
