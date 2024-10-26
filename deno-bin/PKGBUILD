@@ -1,7 +1,7 @@
 # Maintainer: Charles Dong <chardon_cs@proton.me>
 
 pkgname=deno-bin
-pkgver=2.0.2
+pkgver=2.0.3
 pkgrel=1
 pkgdesc="Startup AUR providing the latest deno runtime, then you can upgrade deno using \`deno upgrade\`"
 arch=('aarch64')
@@ -11,12 +11,12 @@ provides=(deno)
 conflicts=(deno)
 
 _target=deno-$CARCH-unknown-linux-gnu
-_baseurl=https://github.com/denoland/deno/releases/download/v2.0.2
+_baseurl="https://github.com/denoland/deno/releases/download/v$pkgver"
 source=(
     $_baseurl/${_target}.zip
 )
 sha256sums=(
-    "bbd4c8be2b45a1277bf4caa48e4c0e7c4f3c305cab0d3548971b9f93e9ce711e"
+    "3a7c6b8e9cfc95881c1c0f6a2a11fcf994d00d0332cbac2e6dbe99e18ab18341"
 )
 
 check() {
