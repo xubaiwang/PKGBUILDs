@@ -1,0 +1,32 @@
+pkgname='python-tushare'
+_module='tushare'
+_src_folder='tushare-1.4.13'
+pkgver='1.4.13'
+pkgrel=1
+pkgdesc="A utility for crawling historical and Real-time Quotes data of China stocks"
+url="https://tushare.pro"
+depends=(
+  'python'
+  'python-beautifulsoup4'
+  'python-lxml'
+  'python-pandas'
+  'python-requests'
+  'python-simplejson'
+  'python-tqdm'
+  'python-websocket-client'
+)
+makedepends=('python-build' 'python-installer' 'python-wheel')
+license=('BSD')
+arch=('any')
+source=("https://files.pythonhosted.org/packages/c8/66/9fa440353c159117fc487ca2de4e9ee314d6d36481fa9beb721048f1c652/tushare-1.4.13.tar.gz")
+sha256sums=('2ccc1178dc20df61e8e993ff61b61806059d913c7b2e664fb6ce6986b1840c6c')
+
+build() {
+    cd "${srcdir}/${_src_folder}"
+    python -m build --wheel --no-isolation
+}
+
+package() {
+    cd "${srcdir}/${_src_folder}"
+    python -m installer --destdir="${pkgdir}" dist/*.whl
+}
