@@ -1,6 +1,6 @@
 pkgname=marksman-bin
 pkgver=20241007
-pkgrel=1
+pkgrel=2
 pkgdesc="Write Markdown with code assist and intelligence in the comfort of your favourite editor."
 arch=('aarch64')
 url="https://github.com/artempyanykh/marksman"
@@ -11,6 +11,7 @@ conflicts=(marksman)
 source=("https://github.com/artempyanykh/marksman/releases/download/2024-10-07/marksman-linux-arm64")
 noextract=("marksman-linux-arm64")
 sha256sums=("a6638c7af382efba0169d14fd9d9d09fdce922d3604ec24bf545aec51e2ab789")
+options=("!strip")
 
 check() {
     cd $srcdir
