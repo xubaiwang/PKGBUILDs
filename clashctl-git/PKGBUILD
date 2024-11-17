@@ -1,0 +1,38 @@
+pkgname="clashctl-git"
+_pkgname="clashctl"
+pkgdesc="CLI for interacting with clash"
+url="https://github.com/George-Miao/clashctl"
+license=(MIT)
+arch=(any)
+pkgrel=1
+makedepends=(rust)
+
+source=(
+  "git+https://github.com/George-Miao/clashctl"
+)
+sha256sums=(
+  'SKIP'
+)
+
+pkgver=r400.b09e1fa
+pkgver() {
+  cd "$_pkgname" || exit
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+prepare() {
+    export RUSTUP_TOOLCHAIN=stable
+    cd "$_pkgname" || exit
+    cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+    export RUSTUP_TOOLCHAIN=stable
+    export CARGO_TARGET_DIR=target
+    cd "$_pkgname" || exit
+    cargo build --frozen --release --all-features
+}
+
+package() {
+    install -Dm0755 -t "$pkgdir/usr/bin/" "$srcdir/$_pkgname/target/release/$_pkgname"
+}

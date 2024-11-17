@@ -1,0 +1,5 @@
+clashctl
+
+src/
+pkg/
+*.pkg.tar.xz
