@@ -1,0 +1,17 @@
+pkgbase = nodejs-pnpm
+	pkgdesc = Install pnpm package manager with npm
+	pkgver = 9.12.2
+	pkgrel = 1
+	url = https://github.com/pnpm/pnpm
+	arch = any
+	license = MIT
+	makedepends = npm
+	provides = pnpm
+	conflicts = pnpm
+	noextract = pnpm-9.12.2.tgz
+	source = pnpm-9.12.2.tgz::https://registry.npmjs.org/pnpm/-/pnpm-9.12.2.tgz
+	source = LICENSE::https://github.com/pnpm/pnpm/raw/main/LICENSE
+	sha256sums = 2ef6e547b0b07d841d605240dce4d635677831148cd30f6d564b8f4f928f73d2
+	sha256sums = aa0810cc8470d7df338df43742a4a0be86f50ea6348eda3f2168bb712072aced
+
+pkgname = nodejs-pnpm

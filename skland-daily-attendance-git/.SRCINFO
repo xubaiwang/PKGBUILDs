@@ -1,0 +1,15 @@
+pkgbase = skland-daily-attendance-git
+	pkgdesc = 基於 Node.js 实现的森空岛自动签到
+	pkgver = r40.41d9dd2
+	pkgrel = 1
+	url = https://github.com/enpitsuLin/skland-daily-attendance
+	arch = any
+	license = MIT
+	depends = nodejs
+	depends = npm
+	source = git+https://github.com/enpitsuLin/skland-daily-attendance
+	source = skland-daily-attendance.sh
+	sha256sums = SKIP
+	sha256sums = fe0d97810faa1b30575e0159b6f9509ebd9c44dfb5bcd24cb10b255b41dc38e7
+
+pkgname = skland-daily-attendance-git

@@ -1,0 +1,22 @@
+pkgbase = python-tushare
+	pkgdesc = A utility for crawling historical and Real-time Quotes data of China stocks
+	pkgver = 1.4.13
+	pkgrel = 1
+	url = https://tushare.pro
+	arch = any
+	license = BSD
+	makedepends = python-build
+	makedepends = python-installer
+	makedepends = python-wheel
+	depends = python
+	depends = python-beautifulsoup4
+	depends = python-lxml
+	depends = python-pandas
+	depends = python-requests
+	depends = python-simplejson
+	depends = python-tqdm
+	depends = python-websocket-client
+	source = https://files.pythonhosted.org/packages/c8/66/9fa440353c159117fc487ca2de4e9ee314d6d36481fa9beb721048f1c652/tushare-1.4.13.tar.gz
+	sha256sums = 2ccc1178dc20df61e8e993ff61b61806059d913c7b2e664fb6ce6986b1840c6c
+
+pkgname = python-tushare

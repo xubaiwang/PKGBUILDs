@@ -1,0 +1,12 @@
+pkgbase = clashctl-git
+	pkgdesc = CLI for interacting with clash
+	pkgver = r400.b09e1fa
+	pkgrel = 1
+	url = https://github.com/George-Miao/clashctl
+	arch = any
+	license = MIT
+	makedepends = rust
+	source = git+https://github.com/George-Miao/clashctl
+	sha256sums = SKIP
+
+pkgname = clashctl-git

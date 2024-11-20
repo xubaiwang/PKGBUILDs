@@ -1,0 +1,15 @@
+pkgbase = marksman-bin
+	pkgdesc = Write Markdown with code assist and intelligence in the comfort of your favourite editor.
+	pkgver = 20241007
+	pkgrel = 2
+	url = https://github.com/artempyanykh/marksman
+	arch = aarch64
+	license = MIT
+	provides = marksman
+	conflicts = marksman
+	noextract = marksman-linux-arm64
+	options = !strip
+	source = https://github.com/artempyanykh/marksman/releases/download/2024-10-07/marksman-linux-arm64
+	sha256sums = a6638c7af382efba0169d14fd9d9d09fdce922d3604ec24bf545aec51e2ab789
+
+pkgname = marksman-bin
