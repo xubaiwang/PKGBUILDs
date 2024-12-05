@@ -15,7 +15,7 @@ sha256sums=(
   'fe0d97810faa1b30575e0159b6f9509ebd9c44dfb5bcd24cb10b255b41dc38e7'
 )
 
-pkgver=r40.41d9dd2
+pkgver=r44.ebd14bd
 pkgver() {
   cd "skland-daily-attendance"
   printf "r%s.%s\n" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"

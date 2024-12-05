@@ -1,6 +1,6 @@
 pkgbase = skland-daily-attendance-git
 	pkgdesc = 基於 Node.js 实现的森空岛自动签到
-	pkgver = r40.41d9dd2
+	pkgver = r44.ebd14bd
 	pkgrel = 1
 	url = https://github.com/enpitsuLin/skland-daily-attendance
 	arch = any
